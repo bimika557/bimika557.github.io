@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Bimika Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/ruet.jpg" class="logo">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="extracurricular.html">Extracurricular</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-2">
+                    <div class="about-box">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Hi, I'm Bimika! I was born and raised in Bogura, Bangladesh.
+                             A significant part of my life was shaped by my years in Cadet College, where I developed a strong sense of discipline, dedication, and resilience. 
+                             With a deep passion for Electronics and Telecommunication Engineering, I am constantly exploring and pushing my limits to expand my knowledge and skills. 
+                            My journey is driven by a commitment to excellence and a relentless pursuit of innovation.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Hobby</p>
+                            <p class="tab-links" onclick="opentab('education')">Achievements</p>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <table>
+                                <tr>
+                                    <th>Skill</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>C/C++</td>
+                                    <td>Programming Languages</td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft Office</td>
+                                    <td>Office Productivity Tools</td>
+                                </tr>
+                                <tr>
+                                    <td>Public Speaking</td>
+                                    <td>Communication Skills</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <table>
+                                <tr>
+                                    <th>Hobby</th>
+                                </tr>
+                                <tr>
+                                    <td>Reading Books</td>
+                                </tr>
+                                <tr>
+                                    <td>Travelling</td>
+                                </tr>
+                                <tr>
+                                    <td>Gardening</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="tab-contents" id="education">
+                            <table>
+                                <tr>
+                                    <th>Achievement</th>
+                                    <th>Details</th>
+                                </tr>
+                                <tr>
+                                    <td>Inter House English Extempore Speech Competition 2019</td>
+                                    <td>1st position</td>
+                                </tr>
+                                <tr>
+                                    <td>Inter House English Debate Competition 2018</td>
+                                    <td>Runners-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Inter House Badminton Competition</td>
+                                    <td>Runners-up position</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-col-1">
+                    <img src="images/biki.jpg" alt="About Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>

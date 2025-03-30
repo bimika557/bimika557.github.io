@@ -1,0 +1,114 @@
+/* GALLERY PAGE STYLING */
+body#gallery-page {
+
+    background: #e7dac2;
+    color: #000000;
+}
+
+/* Unique container */
+.gallery-container {
+    width: 85%;
+    margin: auto;
+}
+
+/* Navigation */
+.gallery-container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Unique logo */
+.gallery-logo {
+    width: 140px;
+}
+
+/* Unique Navigation */
+.gallery-container nav ul {
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+}
+
+.gallery-container nav ul li {
+    display: inline-block;
+    margin: 10px 15px;
+    position: relative;
+}
+
+.gallery-container nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Underline */
+.gallery-container nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease-in-out;
+}
+
+.gallery-container nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* GALLERY SECTION */
+#gallery-section {
+    padding: 5px 0;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #75082ee1;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Gallery Boxes */
+.gallery-box {
+    background: #472929;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.gallery-box img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Titles */
+.gallery-caption {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ffcc00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

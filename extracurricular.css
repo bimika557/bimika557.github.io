@@ -1,0 +1,148 @@
+/* EXTRACURRICULAR PAGE STYLING */
+body#extracurricular-page {
+    background: #e7dac2;
+    color: #000000;
+}
+
+/* Unique container */
+.extra-container {
+    width: 85%;
+    margin: auto;
+}
+
+/* Navigation */
+.extra-container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Unique logo */
+.extra-logo {
+    width: 140px;
+}
+
+/* Unique Navigation */
+.extra-container nav ul {
+    list-style: none;
+}
+
+.extra-container nav ul li {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    margin: 10px 15px;
+    position: relative;
+}
+
+.extra-container nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Underline */
+.extra-container nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background:#ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease-in-out;
+}
+
+.extra-container nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* EXTRACURRICULAR SECTION */
+#extracurricular-section {
+    padding: 0px 0;
+    text-align: center;
+}
+
+.extra-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #3d1907;
+    margin-bottom: 40px;
+}
+
+/* GRID LAYOUT */
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARD STYLING */
+.extra-card {
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.extra-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.extra-card:hover .extra-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back of Card */
+.extra-card-front, .extra-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Front Side */
+.extra-card-front {
+    background:#3d1907;
+    font-size: 22px;
+    font-weight: bold;
+    color: #d3baaf;
+}
+
+/* Back Side */
+.extra-card-back {
+    background: #a6806d;
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .extra-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .extra-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .extra-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bimika Portfolio</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/ruet.jpg" class="logo">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="extracurricular.html">Extracurricular</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-col-1">
+                    <h1 class="sub-title">Get in Touch</h1>
+                    <p>If you would like to reach out, feel free to contact me through any of the following:</p>
+                    
+                    <!-- Contact Information -->
+                    <ul class="contact-list">
+                        <li>
+                            <strong>Email:</strong> <a href="mailto:bimikahasan@gmail.com">bimikahasan@gmail.com</a>
+                        </li>
+                        <li>
+                            <strong>Phone:</strong> <a href="tel:+8801738043711">+8801738043711</a>
+                        </li>
+                        <li>
+                            <strong>Instagram:</strong> <a href="https://www.instagram.com/bimika" target="_blank">@bimika</a>
+                        </li>
+                        <li>
+                            <strong>Facebook:</strong> <a href="https://www.facebook.com/share/15CW8G2c9K/" target="_blank">Bimika's Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-col-2">
+                    <h1 class="sub-title">Send a Message</h1>
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                        <p id="message-status"></p> <!-- Status message -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzPu0RrGZh4Ds5g9QOIjyz5kbKQJK31-GveAiOxQE96eeYwHd2czO23ynJgZgiR-kU0Hg/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const statusMessage = document.getElementById('message-status'); // Get status message element
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            statusMessage.textContent = 'Sending...'; // Show sending message
+            statusMessage.style.color = 'blue';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    statusMessage.textContent = 'Message sent successfully!';
+                    statusMessage.style.color = 'green';
+                    form.reset(); // Clear the form
+                    setTimeout(() => statusMessage.textContent = '', 3000); // Remove message after 3 sec
+                })
+                .catch(error => {
+                    statusMessage.textContent = 'Failed to send message. Please try again.';
+                    statusMessage.style.color = 'red';
+                });
+        });
+    </script>
+</body>
+</html>

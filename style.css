@@ -1,0 +1,259 @@
+/* General Styles */ 
+* { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e7dac2;
+    color: #0a0707;
+}
+
+/* Header Section */
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Fix: Hide underline initially and show only on hover */
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Show underline only on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header Content: Two Columns */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0%;
+}
+
+/* Left Side: Text */
+.header-text {
+    flex-basis: 50%;
+    font-size: 24px;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 50px;
+    margin-top: 0px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+/* Right Side: Image with Dynamic Border */
+.header-image {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Animated Border */
+.header-image::before {
+    content: "";
+    position: absolute;
+    width: 380px; /* Slightly larger than the image */
+    height: 380px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff004f, #ffcc00, #00ffcc, #ff004f);
+    background-size: 300% 300%;
+    animation: border-animation 3s infinite linear;
+    z-index: -1;
+}
+
+/* Image Styling */
+.header-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(237, 218, 14, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+/* Border Animation */
+@keyframes border-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* About Section Styles */
+#about {
+    padding: 20px 0;
+    color: #6b2f2f;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Left Side: Image */
+.about-col-1 {
+    padding-left: 30px;
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 70%;
+    height:96%;
+    border-radius: 10px;
+}
+
+/* Right Side: Text */
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+/* Box Styling for About Section */
+.about-box {
+    padding: 20px;
+    border: 2px solid #471f2c;
+    border-radius: 10px;
+    background-color: #e7dede;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #371414;
+    margin-bottom: 20px;
+}
+
+/* Tab Titles */
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #034335;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+/* Tab Contents */
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.tab-contents table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.tab-contents table th, .tab-contents table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #4b3131;
+}
+
+.tab-contents table th {
+    background-color: #f4f4f4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-image::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .header-image img {
+        width: 280px;
+    }
+
+    .sub-title {
+        font-size: 40px;
+    }
+
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+}

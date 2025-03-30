@@ -1,0 +1,154 @@
+/* EDUCATION PAGE STYLING */
+body#education-page {
+    background: #e7dac2;
+    color: #000000;
+}
+
+/* Unique container */
+.education-container {
+    width: 85%;
+    margin: auto;
+}
+
+/* Navigation */
+.education-container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Unique logo */
+.education-logo {
+    width: 140px;
+}
+
+/* Unique Navigation */
+.education-container nav ul {
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+}
+
+.education-container nav ul li {
+    display: inline-block;
+    margin: 10px 15px;
+    position: relative;
+}
+
+.education-container nav ul li a {
+    color: #080505;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Underline */
+.education-container nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background:#ff004f ;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease-in-out;
+}
+
+.education-container nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* EDUCATION SECTION */
+#education-section {
+    padding: 0px 0;
+    text-align: center;
+}
+
+.education-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #3d0f26;
+    margin-bottom: 40px;
+}
+
+/* TIMELINE */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Vertical Line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background: #2f040c;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2.5px;
+}
+
+/* Timeline Items */
+.timeline-item {
+    background: #4c4040;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+    position: relative;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Left & Right Alignment */
+.timeline-item:nth-child(odd) {
+    left: -50%;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Timeline Item Hover Effect */
+.timeline-item:hover {
+    transform: scale(1.05);
+}
+
+/* Timeline Date */
+.timeline-date {
+    font-size: 16px;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Timeline Content */
+.timeline-content h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.timeline-content p {
+    font-size: 18px;
+    color: #ffec43;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 90%;
+        left: 0 !important;
+        text-align: left;
+    }
+}
